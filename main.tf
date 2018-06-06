@@ -30,6 +30,10 @@ resource "google_container_cluster" "default" {
   //   https://github.com/terraform-providers/terraform-provider-kubernetes/pull/73
   enable_legacy_abac = true
 
+  node_config {
+    machine_type = "${var.machine_type}"
+  }
+
   // Wait for the GCE LB controller to cleanup the resources.
   provisioner "local-exec" {
     when    = "destroy"

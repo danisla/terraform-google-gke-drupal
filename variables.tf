@@ -33,6 +33,10 @@ variable "name" {
   default     = "tf-gke-drupal"
 }
 
+variable "machine_type" {
+  default = "n1-standard-4"
+}
+
 variable "helm_version" {
   default = "v2.9.1"
 }
